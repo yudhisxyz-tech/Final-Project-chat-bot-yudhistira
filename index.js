@@ -56,10 +56,14 @@ app.post('/api/chat', async (req, res) => {
         `
     }
 });
-        res.status(200).json({ result: response.text });
+       res.status(200).json({ result: response.text });
     } catch (e) {
+        console.error('ERROR:', e.message); // tambah ini
         res.status(500).json({ error: e.message });
     }
+
 });
+    
+
 
 // Untuk merapihkan code nya ketik shortcut Alt + Shift + F di vscode
